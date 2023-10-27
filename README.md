@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 소개
 
-## Getting Started
+이 프로젝트는 AHHA Labs에서 Frontend 신입들이 Typescript를 배우기 위해 만들어졌습니다.
 
-First, run the development server:
+## 스터디 설명
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 문제 생성 시
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- main 브랜치에서 작업합니다.
+- src > app > study 내부의 0 폴더를 복사하여 다음 숫자의 폴더로 변경합니다.
+- page.tsx 파일에 자유롭게 문제를 작성합니다.
+  - StudyPage 컴포넌트의 pageNumber를 현재 페이지에 맞게 변경합니다.
+  - 제일 상위에 있는 page.tsx 파일 내부의 `STUDY_COUNT: number`를 다음 숫자로 변경합니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 문제 풀이 시
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 자신의 이름을 딴 브랜치를 생성합니다.
+- 가장 최근의 문제 내부의 자신의 이름으로 생성되있는 폴더 내부에 문제의 정답을 풉니다.
+- 문제를 풀 때 자유롭게 푸시면 됩니다.
+- 문제풀이가 완료되면 PR 을 올립니다. (자신의 branch -> main)
 
-## Learn More
+### 스터디 모임
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 각각 브랜치를 돌아가며 문제 요구사항이 제대로 구현되었는지 확인합니다.
+- PR 올라온 코드를 확인합니다.
+  - 자유롭게 댓글을 달거나 수정합니다.
+  - 완료 시 merge 합니다.
+- 다음 출제자를 정합니다.
+  - 정해진 출제자는 다음주까지 문제를 만들어옵니다.
