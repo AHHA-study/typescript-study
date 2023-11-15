@@ -1,0 +1,40 @@
+.table {
+  margin: auto;
+}
+
+.table__header {
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  text-align: center;
+}
+
+.table__header--id {
+  width: 5%;
+}
+
+.table__header--name {
+  width: calc(95% / 2);
+}
+
+.table__header--value {
+  width: calc(95% / 2);
+}
+
+.table__row {
+
+}
+
+.table__row--id {
+  
+}
+
+.table__row--name {
+
+}
+
+.table__row--value {
+
+}
