@@ -23,29 +23,29 @@ const getData = async (page: number): Promise<ApiReturnType> => {
 }
 
 const Main = () => {
-  const [page, setPage] = useState<number>(0)
   const [list, setList] = useState<Data[]>([])
 
-  const concatList = async () => {
+  const getMoreData = async (page: number) => {
     try {
-      const result = await getData(page)
+      const result = await getData(page * 10)
 
       setList((prev) => [...prev, ...result.data])
-      setPage(page + 1)
     } catch (e) {
       console.error(e)
     }
   }
 
   useEffect(() => {
-    concatList()
+    getMoreData(0)
   }, [])
 
   return (
-    <div>
-      <Table data={list} />
-      <button onClick={concatList}>더보기</button>
-    </div>
+    <>
+      <Table
+        data={list}
+        getMoreData={getMoreData}
+      />
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 
 import './table.css'
 
@@ -9,28 +9,35 @@ interface Data {
 }
 
 interface TableProps {
-  data: Data[]
+  data: Data[],
+  getMoreData: (page: number) => Promise<void>
 }
 
-const Table = (props: TableProps): ReactNode => {
-  const { data } = props
+const Table = ( { data, getMoreData }: TableProps): ReactNode => {
+  const [page, setPage] = useState<number>(1)
+
+  const handleButtonClick = () => {
+    getMoreData(page)
+    setPage(page + 1)
+  }
 
   return (
-    <div className='table'>
-      <header className='table__header'>
-        <div className='table__header--id'>id</div>
-        <div className='table__header--name'>name</div>
-        <div className='table__header--value'>value</div>
-      </header>
-      <ul>
+    <div className='component'>
+      <table className='table'>
+        <tr className='table__header'>
+          <th className='table__header--id'>id</th>
+          <th className='table__header--name'>name</th>
+          <th className='table__header--value'>value</th>
+        </tr>
         {data.map(({id, name, value}) => (
-          <div className='table__row'>
-            <li className='table__row--id'>{id}</li>
-            <li className='table__row--name'>{name}</li>
-            <li className='table__row--value'>{value}</li>
-          </div>
+          <tr className='table__row'>
+            <td className='table__row--id'>{id}</td>
+            <td className='table__row--name'>{name}</td>
+            <td className='table__row--value'>{value}</td>
+          </tr>
         ))}
-      </ul>
+      </table>
+      <button onClick={handleButtonClick}>더보기</button>
     </div>
   )
 }

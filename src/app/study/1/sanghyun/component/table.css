@@ -1,40 +1,42 @@
 .table {
   margin: auto;
+
+  font-family: monospace;
+  font-size: 15px;
+
+  width: 50%;
 }
 
 .table__header {
   height: 40px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 
   text-align: center;
 }
 
 .table__header--id {
-  width: 5%;
+  width: 3rem;
 }
 
 .table__header--name {
-  width: calc(95% / 2);
+  width: 10rem;
 }
 
 .table__header--value {
-  width: calc(95% / 2);
+  width: 25%
 }
 
 .table__row {
-
+  text-align: center;
 }
 
-.table__row--id {
-  
-}
+button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
 
-.table__row--name {
+  width: 10rem;
+  height: 2rem;
 
-}
-
-.table__row--value {
-
+  border: 1px solid white;
+  border-radius: 10px;
 }
