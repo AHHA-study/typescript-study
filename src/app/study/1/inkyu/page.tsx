@@ -1,17 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 type DataType = { data: { id: number; name: string; value: string }[] };
 
 const getData = async (index: number): Promise<DataType> => {
-  const res = await fetch(`http://localhost:3000/api/random?size=10&index=${index}`);
-
-  if (!res.ok) {
-    throw new Error('data fetch error.');
+  try {
+    const res = await fetch(`http://localhost:3000/api/random?size=10&index=${index}`);
+    return res.json();
+  } catch (e: unknown) {
+    return { data: [{ id: index, name: 'error', value: 'error' }] };
   }
-
-  return res.json();
 };
 
 const Main = () => {
