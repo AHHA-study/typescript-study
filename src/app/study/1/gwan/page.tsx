@@ -17,15 +17,12 @@ const Main = () => {
     if (!res.ok) {
       throw new Error('data fetch error.');
     }
-    console.log('fetching url:', `http://localhost:3000/api/random?size=10&index=${startIndex}`)
     return res.json();
   };
 
   const fetchData = async () => {
     const { data } = await getData()
     const newData = listData.concat(data)
-    console.log('startIndex:', startIndex)
-    console.log('newData:', newData)
     setListData(newData)
   }
 
@@ -33,8 +30,6 @@ const Main = () => {
     fetchData()
   }, [startIndex])
 
-  console.log('listData:', listData)
-  console.log('startIndex:', startIndex)
   return <div>
     {listData.map(({id, name, value}) => (
       <div key={id}>
