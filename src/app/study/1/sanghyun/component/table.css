@@ -1,0 +1,42 @@
+.table {
+  margin: auto;
+
+  font-family: monospace;
+  font-size: 15px;
+
+  width: 50%;
+}
+
+.table__header {
+  height: 40px;
+
+  text-align: center;
+}
+
+.table__header--id {
+  width: 3rem;
+}
+
+.table__header--name {
+  width: 10rem;
+}
+
+.table__header--value {
+  width: 25%
+}
+
+.table__row {
+  text-align: center;
+}
+
+button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  width: 10rem;
+  height: 2rem;
+
+  border: 1px solid white;
+  border-radius: 10px;
+}
